@@ -44,6 +44,7 @@ button {
 
 a {
     text-decoration: none;
+    color: rgb(231, 236, 241);
 }
 
 .simon {
@@ -74,8 +75,9 @@ a {
 #greenBtn.highlight { background-color: rgb(4, 248, 4); }
 
 /*Modals*/
+/*
 .modal {
-    /*display: none;*/
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -113,4 +115,4 @@ span {
 
 #resultsHeader {
     justify-content: space-between;
-}
+}*/

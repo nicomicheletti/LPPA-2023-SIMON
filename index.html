@@ -6,6 +6,7 @@
     <title>SIMON DICE</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/modals.css">
 </head>
     <body>
         <main id="container" class="container">
@@ -27,46 +28,52 @@
                 <button id="startBtn" class="control">Iniciar Partida</button>
             </section>
             <section id="links">
-                <button class="links"><a href="#">Contacto</a></button>
+                <button class="links"><a href="#" target="_blank">Contacto</a></button>
                 <button class="links"><a href="#">Ranking</a></button>
-                <button class="links"><a href="#">Código</a></button>
+                <button class="links"><a href="https://github.com/nicomicheletti/LPPA-2023-SIMON" target="_blank">Código</a></button>
             </section>
         </main>
         <article id="newGame" class="modal">
-            <h2>Nueva partida</h2>
-            <form action="/" id="newGameForm">
-                <input type="text" name="playerName" id="playerName" placeholder="Ingresá tu nombre">
-                <span>*(mínimo 3 letras)</span>
-            </form>
-            <button id="backBtn" class="modalBtn">Volver</button>
-            <button id="playBtn" class="modalBtn">Jugar!</button>
+            <div class="modalContainer">
+                <h2>Nueva partida</h2>
+                <form action="/" id="newGameForm">
+                    <input type="text" name="playerName" id="playerName" placeholder="Ingresá tu nombre">
+                    <span>*(mínimo 3 letras)</span>
+                </form>
+                <button id="backBtn" class="modalBtn">Volver</button>
+                <button id="playBtn" class="modalBtn">Jugar!</button>
+            </div>
         </article>
         <article id="gameOver" class="modal">
-            <h2>Lo lamento, perdiste!</h2>
-            <button id="backBtn" class="modalBtn">Volver</button>
-            <button id="restartBtn" class="modalBtn">Revancha</button>
+            <div class="modalContainer">
+                <h2>Lo lamento, perdiste!</h2>
+                <button id="backBtn" class="modalBtn">Volver</button>
+                <button id="restartBtn" class="modalBtn">Revancha</button>
+            </div>
         </article>
         <article id="ranking" class="modal">
-            <h2>Raking</h2>
-            <table>
-                <thead>
-                    <tr id="resultsHeader">
-                        <th id="nameHeader">Nombre  - </th>
-                        <th id="scoreHeader">Puntos  - </th>
-                        <th id="dateHeader">Fecha  - </th>
-                        <th id="hourHeader">Hora  </th>
-                    </tr>
-                </thead>
-                <tbody id="rankingResults">
-                    <tr id="showResultsHeader">
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button id="backBtn" class="modalBtn"><a href="#">Volver</a></button>
+            <div class="modalContainer">
+                <h2>Raking</h2>
+                <table>
+                    <thead>
+                        <tr id="resultsHeader">
+                            <th id="nameHeader">Nombre  - </th>
+                            <th id="scoreHeader">Puntos  - </th>
+                            <th id="dateHeader">Fecha  - </th>
+                            <th id="hourHeader">Hora  </th>
+                        </tr>
+                    </thead>
+                    <tbody id="rankingResults">
+                        <tr id="showResultsHeader">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button id="backBtn" class="modalBtn"><a href="#">Volver</a></button>
+            </div>
         </article>
         <script src="./js/simon.js"></script>
         <script src="./js/eventHandlers.js"></script>

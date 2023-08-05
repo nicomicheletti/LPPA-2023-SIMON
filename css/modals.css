@@ -1,0 +1,37 @@
+.modal {
+    display: none;
+    position: fixed;
+    background-color: rgb(231, 236, 241);
+}
+
+.modalContainer {
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgb(0, 140, 255);
+    gap: 1px;
+    place-items: center;
+}
+
+.modalContainer h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#backBtn {
+    display: inline-block;
+}
+
+#newGameForm {
+    justify-content: space-between;
+}
+
+span {
+    display: none;
+    font-size: smaller;
+}
+
+#resultsHeader {
+    justify-content: space-between;
+}
