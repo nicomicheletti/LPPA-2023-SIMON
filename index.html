@@ -14,9 +14,9 @@
                 <h1>SIMÓN DICE</h1>
             </section>
             <section id="scoreBoard" class="scoreBoard">
-                <div>Nivel: <span id="level"></span></div>
-                <div>Puntos: <span id="score"></span></div>
-                <div>Tiempo: <span id="time"></span></div>
+                <div>Nivel: <span id="level">0</span></div>
+                <div>Puntos: <span id="score">0</span></div>
+                <div>Tiempo: <span id="time">0</span></div>
             </section>
             <section id="simon" class="simon">
                 <button id="redBtn" class="simonBtn"></button>
@@ -25,11 +25,11 @@
                 <button id="greenBtn" class="simonBtn"></button>
             </section>
             <section id="control">
-                <button id="startBtn" class="control">Iniciar Partida</button>
+                <button id="startBtn" class="controls">Iniciar Partida</button>
             </section>
             <section id="links">
-                <button class="links"><a href="#" target="_blank">Contacto</a></button>
-                <button class="links"><a href="#">Ranking</a></button>
+                <button class="links"><a href="views/contact.html" target="_blank">Contacto</a></button>
+                <button id="rankingBtn" class="controls"><a href="#">Ranking</a></button>
                 <button class="links"><a href="https://github.com/nicomicheletti/LPPA-2023-SIMON" target="_blank">Código</a></button>
             </section>
         </main>
@@ -38,7 +38,7 @@
                 <h2>Nueva partida</h2>
                 <form action="/" id="newGameForm">
                     <input type="text" name="playerName" id="playerName" placeholder="Ingresá tu nombre">
-                    <span>*(mínimo 3 letras)</span>
+                    <span id="errorMsg">*(mínimo 3 letras)</span>
                 </form>
                 <button id="backBtn" class="modalBtn">Volver</button>
                 <button id="playBtn" class="modalBtn">Jugar!</button>
@@ -75,8 +75,8 @@
                 <button id="backBtn" class="modalBtn"><a href="#">Volver</a></button>
             </div>
         </article>
-        <script src="./js/simon.js"></script>
         <script src="./js/eventHandlers.js"></script>
+        <script src="./js/simon.js"></script>
         <script src="./js/main.js"></script>
     </body>
 </html>

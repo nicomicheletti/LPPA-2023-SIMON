@@ -27,7 +27,7 @@
     justify-content: space-between;
 }
 
-span {
+#errorMsg {
     display: none;
     font-size: smaller;
 }
