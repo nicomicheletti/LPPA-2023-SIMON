@@ -16,6 +16,7 @@
 
 .modalContainer h2 {
     font-size: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -27,11 +28,19 @@
     justify-content: space-between;
 }
 
-#errorMsg {
+.errorMsg {
     display: none;
     font-size: smaller;
 }
 
+.showError {
+    display: block;
+}
+
 #resultsHeader {
     justify-content: space-between;
+}
+
+.showModal {
+    display: flex;
 }

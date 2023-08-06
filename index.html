@@ -35,25 +35,25 @@
         </main>
         <article id="newGame" class="modal">
             <div class="modalContainer">
-                <h2>Nueva partida</h2>
+                <h2>NUEVA PARTIDA</h2>
                 <form action="/" id="newGameForm">
-                    <input type="text" name="playerName" id="playerName" placeholder="Ingresá tu nombre">
-                    <span id="errorMsg">*(mínimo 3 letras)</span>
+                    <input type="text" required name="playerName" id="playerName" placeholder="Ingresá tu nombre">
+                    <p id="errorNameMsg" class="errorMsg">*(mínimo 3 letras)</p>
                 </form>
-                <button id="backBtn" class="modalBtn">Volver</button>
+                <button id="backBtn" class="modalBtn"><a href="index.html">Volver</a></button>
                 <button id="playBtn" class="modalBtn">Jugar!</button>
             </div>
         </article>
         <article id="gameOver" class="modal">
             <div class="modalContainer">
-                <h2>Lo lamento, perdiste!</h2>
+                <h2>PERDISTE!</h2>
                 <button id="backBtn" class="modalBtn">Volver</button>
                 <button id="restartBtn" class="modalBtn">Revancha</button>
             </div>
         </article>
         <article id="ranking" class="modal">
             <div class="modalContainer">
-                <h2>Raking</h2>
+                <h2>RANKING</h2>
                 <table>
                     <thead>
                         <tr id="resultsHeader">
