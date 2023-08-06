@@ -151,17 +151,37 @@ var validateName = function() {
 }
 
 var handleRedBtn = function() {
-    console.log('click en handleRedBtn');
+    redBtn.classList.add('highlight');
+    setTimeout(function(){
+        redBtn.classList.remove('highlight')
+    },150);
+    sequencePlayer.push('red');
+    validateSelection();
 };
 
 var handleYellowBtn = function() {
-    console.log('click en handleYellowBtn');
+    yellowBtn.classList.add('highlight');
+    setTimeout(function(){
+        yellowBtn.classList.remove('highlight')
+    },150);
+    sequencePlayer.push('yellow');
+    validateSelection();
 };
 
 var handleBlueBtn = function() {
-    console.log('click en handleBlueBtn');
+    blueBtn.classList.add('highlight');
+    setTimeout(function(){
+        blueBtn.classList.remove('highlight')
+    },150);
+    sequencePlayer.push('blue');
+    validateSelection();
 };
 
 var handleGreenBtn = function() {
-    console.log('click en handleGreenBtn');
+    greenBtn.classList.add('highlight');
+    setTimeout(function(){
+        greenBtn.classList.remove('highlight')
+    },150);
+    sequencePlayer.push('green');
+    validateSelection();
 };
