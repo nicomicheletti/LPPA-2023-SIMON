@@ -34,21 +34,6 @@ window.onload = function(){
         };
     };
 
-    function corroboration (string) {
-        string = string.split("").join("");
-        var control = 0;
-        for (var i = 0; i < string.length; i++){
-            if (Number(string[i]) == string[i]) {
-                control ++;
-            };
-        };
-        if (control == 0) {
-            return false;
-        } else {
-            return true;
-        };
-    };
-
     function symbolCheck (string) {
         var symbols = '!"#$%&/()=?¡¿|¨*][_:;,.-{}+¬°~^`@'+"'";
         var control = 0;
@@ -72,8 +57,8 @@ window.onload = function(){
         } else if (name.value.length < 3) {
             showError(name,'Debe contener al menos 3 caracteres');
             return 'Nombre muy corto';
-        } else if (corroboration(name.value) || symbolCheck(name.value)) {
-            showError(name,'Ingresá un formato válido. No debe tener números ni símbolos');
+        } else if (symbolCheck(name.value)) {
+            showError(name,'Ingresá un formato válido. No debe tener símbolos');
             return 'Formato inválido';
         } else {
             return '';
