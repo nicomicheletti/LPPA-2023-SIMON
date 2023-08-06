@@ -15,7 +15,7 @@ var initButtons = function(){
     yellowBtn.disabled = true;
     blueBtn.disabled = true;
     greenBtn.disabled = true;
-}
+};
 
 var startSimon = function(){
     startBtn.disabled = true;
@@ -24,7 +24,7 @@ var startSimon = function(){
     var newColor = colors[colorPos];
     sequence.push(newColor);
     setTimeout(showSequence, 2000);
-}
+};
 
 var showSequence = function() {
     increaseLevel();
@@ -51,7 +51,7 @@ var showSequence = function() {
         }, i*2000)
 });
     setTimeout(playerPlay,sequence.length*1750);
-}
+};
 
 var playerPlay = function(){
     if(sequence.length > sequencePlayer.length){
@@ -64,21 +64,21 @@ var playerPlay = function(){
         },300)
         startSimon();
     }
-}
+};
 
 var playerGo = function() {
     redBtn.disabled = false;
     yellowBtn.disabled = false;
     blueBtn.disabled = false;
     greenBtn.disabled = false;
-}
+};
 
 var increaseLevel = function() {
     level++;
     levelSpan.innerHTML = level;
     initialValidation = 0;
     sequencePlayer = [];
-}
+};
 
 var validateSelection = function() {
     if(sequence[initialValidation] == sequencePlayer[initialValidation]){
@@ -89,14 +89,14 @@ var validateSelection = function() {
     } else {
         gameOver();
     }
-}
+};
 
 var simonPlay = function() {
     redBtn.disabled = true;
     yellowBtn.disabled = true;
     blueBtn.disabled = true;
     greenBtn.disabled = true;
-}
+};
 
 var gameOver = function() {
     simonPlay();
@@ -106,7 +106,7 @@ var gameOver = function() {
     }
     restartSimon();
     gameOverModal.classList.add('showModal');
-}
+};
 
 var restartSimon = function(){
     sequence = [];
@@ -119,7 +119,7 @@ var restartSimon = function(){
     greenBtn.classList.remove('highlight');
     levelSpan.innerHTML = level;
     scoreSpan.innerHTML = score;
-}
+};
 
 var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
@@ -148,7 +148,7 @@ var validateName = function() {
         errorName.classList.add('showError');
         playBtn.disabled = true;
     }
-}
+};
 
 var handleRedBtn = function() {
     redBtn.classList.add('highlight');
@@ -189,4 +189,4 @@ var handleGreenBtn = function() {
 var handleRestartBtn = function() {
     gameOverModal.classList.remove('showModal');
     startSimon();
-}
+};
