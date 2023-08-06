@@ -28,9 +28,13 @@
             <button id="startBtn" class="controls">Iniciar Partida</button>
         </section>
         <section id="links">
-            <button class="links"><a href="views/contact.html" target="_blank">Contacto</a></button>
+            <a href="views/contact.html" target="_blank">
+                <button class="links">Contacto</button>
+            </a>
             <button id="rankingBtn" class="controls"><a href="#">Ranking</a></button>
-            <button class="links"><a href="https://github.com/nicomicheletti/LPPA-2023-SIMON" target="_blank">Código</a></button>
+            <a href="https://github.com/nicomicheletti/LPPA-2023-SIMON" target="_blank">
+                <button class="links">Código</button>
+            </a>
         </section>
     </main>
     <article id="newGame" class="modal">
@@ -40,7 +44,9 @@
                 <input type="text" required name="playerName" id="playerName" placeholder="Ingresá tu nombre">
                 <p id="errorNameMsg" class="errorMsg">*(mínimo 3 letras)</p>
             </form>
-            <button id="backBtn" class="modalBtn"><a href="index.html">Volver</a></button>
+            <a href="index.html">
+                <button id="backBtn" class="modalBtn">Volver</button>
+            </a>
             <button id="playBtn" class="modalBtn">Jugar!</button>
         </div>
     </article>
@@ -48,7 +54,9 @@
         <div class="modalContainer">
             <h2>PERDISTE!</h2>
             <p>La próxima lo harás mejor</p>
-            <button id="backBtn" class="modalBtn"><a href="index.html">Volver</a></button>
+            <a href="index.html">
+                <button id="backBtn" class="modalBtn">Volver</button>
+            </a>
             <button id="restartBtn" class="modalBtn">Revancha</button>
         </div>
     </article>
