@@ -9,6 +9,14 @@ var indexValidate = 0;
 var score = 0;
 var totalScore = 0;
 
+var initButtons = function(){
+    playBtn.disabled = true;
+    redBtn.disabled = true;
+    yellowBtn.disabled = true;
+    blueBtn.disabled = true;
+    greenBtn.disabled = true;
+}
+
 var startSimon = function(){
     startBtn.disabled = true;
     rankingBtn.disabled = true;
@@ -44,6 +52,19 @@ var showSequence = function() {
     setTimeout(playerPlay,sequence.length*1750);
 }
 
+var playerPlay = function(){
+    if(sequence.length > sequencePlayer.length){
+        playerGo();
+    } else {
+        simonPlay();
+        setTimeout(function(){
+            score = score + (level*10);
+            scoreSpan.innerHTML = score;
+        },300)
+        startSimon();
+    }
+}
+
 
 var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
@@ -58,6 +79,7 @@ var handlePlayBtn = function() {
     playerName = playerNameForm.value;
     playerNameForm.value = '';
     newGameModal.classList.remove('showModal');
+    startSimon();
 };
 
 var checkPlayerName = /^[\w\s]{3,20}$/;

@@ -12,6 +12,8 @@ var newGameModal;
 var playerNameForm;
 var playBtn;
 
+var scoreSpan;
+
 var init = function() {
     startBtn = document.getElementById('startBtn');
     rankingBtn = document.getElementById('rankingBtn');
@@ -25,6 +27,8 @@ var init = function() {
     playerNameForm = document.getElementById('playerName');
     playBtn = document.getElementById('playBtn');
 
+    scoreSpan = document.getElementById('score');
+
     startBtn.addEventListener('click', handleStartBtn);
     rankingBtn.addEventListener('click', handleRankingBtn);
 
@@ -36,4 +40,5 @@ var init = function() {
     playerNameForm.addEventListener('keyup', validateName);
     playBtn.addEventListener('click', handlePlayBtn);
 
+    initButtons();
 };
