@@ -8,76 +8,76 @@
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/modals.css">
 </head>
-    <body>
-        <main id="container" class="container">
-            <section id="title" class="title">
-                <h1>SIMÓN DICE</h1>
-            </section>
-            <section id="scoreBoard" class="scoreBoard">
-                <div>Nivel: <span id="level">0</span></div>
-                <div>Puntos: <span id="score">0</span></div>
-                <div>Tiempo: <span id="time">0</span></div>
-            </section>
-            <section id="simon" class="simon">
-                <button id="redBtn" class="simonBtn"></button>
-                <button id="yellowBtn" class="simonBtn"></button>
-                <button id="blueBtn" class="simonBtn"></button>
-                <button id="greenBtn" class="simonBtn"></button>
-            </section>
-            <section id="control">
-                <button id="startBtn" class="controls">Iniciar Partida</button>
-            </section>
-            <section id="links">
-                <button class="links"><a href="views/contact.html" target="_blank">Contacto</a></button>
-                <button id="rankingBtn" class="controls"><a href="#">Ranking</a></button>
-                <button class="links"><a href="https://github.com/nicomicheletti/LPPA-2023-SIMON" target="_blank">Código</a></button>
-            </section>
-        </main>
-        <article id="newGame" class="modal">
-            <div class="modalContainer">
-                <h2>NUEVA PARTIDA</h2>
-                <form action="/" id="newGameForm">
-                    <input type="text" required name="playerName" id="playerName" placeholder="Ingresá tu nombre">
-                    <p id="errorNameMsg" class="errorMsg">*(mínimo 3 letras)</p>
-                </form>
-                <button id="backBtn" class="modalBtn"><a href="index.html">Volver</a></button>
-                <button id="playBtn" class="modalBtn">Jugar!</button>
-            </div>
-        </article>
-        <article id="gameOver" class="modal">
-            <div class="modalContainer">
-                <h2>PERDISTE!</h2>
-                <p>La próxima lo harás mejor</p>
-                <button id="backBtn" class="modalBtn"><a href="index.html">Volver</a></button>
-                <button id="restartBtn" class="modalBtn">Revancha</button>
-            </div>
-        </article>
-        <article id="ranking" class="modal">
-            <div class="modalContainer">
-                <h2>RANKING</h2>
-                <table>
-                    <thead>
-                        <tr id="resultsHeader">
-                            <th id="nameHeader">Nombre  - </th>
-                            <th id="scoreHeader">Puntos  - </th>
-                            <th id="dateHeader">Fecha  - </th>
-                            <th id="hourHeader">Hora  </th>
-                        </tr>
-                    </thead>
-                    <tbody id="rankingResults">
-                        <tr id="showResultsHeader">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button id="backBtn" class="modalBtn"><a href="#">Volver</a></button>
-            </div>
-        </article>
-        <script src="./js/eventHandlers.js"></script>
-        <script src="./js/simon.js"></script>
-        <script src="./js/main.js"></script>
-    </body>
+<body>
+    <main id="container" class="container">
+        <section id="title" class="title">
+        <h1>SIMÓN DICE</h1>
+        </section>
+        <section id="scoreBoard" class="scoreBoard">
+            <div>Nivel: <span id="level">0</span></div>
+            <div>Puntos: <span id="score">0</span></div>
+            <div>Tiempo: <span id="time">0</span></div>
+        </section>
+        <section id="simon" class="simon">
+            <button id="redBtn" class="simonBtn"></button>
+            <button id="yellowBtn" class="simonBtn"></button>
+            <button id="blueBtn" class="simonBtn"></button>
+            <button id="greenBtn" class="simonBtn"></button>
+        </section>
+        <section id="control">
+            <button id="startBtn" class="controls">Iniciar Partida</button>
+        </section>
+        <section id="links">
+            <button class="links"><a href="views/contact.html" target="_blank">Contacto</a></button>
+            <button id="rankingBtn" class="controls"><a href="#">Ranking</a></button>
+            <button class="links"><a href="https://github.com/nicomicheletti/LPPA-2023-SIMON" target="_blank">Código</a></button>
+        </section>
+    </main>
+    <article id="newGame" class="modal">
+        <div class="modalContainer">
+            <h2>NUEVA PARTIDA</h2>
+            <form action="/" id="newGameForm">
+                <input type="text" required name="playerName" id="playerName" placeholder="Ingresá tu nombre">
+                <p id="errorNameMsg" class="errorMsg">*(mínimo 3 letras)</p>
+            </form>
+            <button id="backBtn" class="modalBtn"><a href="index.html">Volver</a></button>
+            <button id="playBtn" class="modalBtn">Jugar!</button>
+        </div>
+    </article>
+    <article id="gameOver" class="modal">
+        <div class="modalContainer">
+            <h2>PERDISTE!</h2>
+            <p>La próxima lo harás mejor</p>
+            <button id="backBtn" class="modalBtn"><a href="index.html">Volver</a></button>
+            <button id="restartBtn" class="modalBtn">Revancha</button>
+        </div>
+    </article>
+    <article id="ranking" class="modal">
+        <div class="modalContainer">
+            <h2>RANKING</h2>
+            <table>
+                <thead>
+                    <tr id="resultsHeader">
+                        <th id="nameHeader">Nombre  - </th>
+                        <th id="scoreHeader">Puntos  - </th>
+                        <th id="dateHeader">Fecha  - </th>
+                        <th id="hourHeader">Hora  </th>
+                    </tr>
+                </thead>
+                <tbody id="rankingResults">
+                    <tr id="showResultsHeader">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="backBtn" class="modalBtn"><a href="#">Volver</a></button>
+        </div>
+    </article>
+    <script src="./js/eventHandlers.js"></script>
+    <script src="./js/simon.js"></script>
+    <script src="./js/main.js"></script>
+</body>
 </html>
