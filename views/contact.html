@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
-    PROXIMAMENTE FORMULARIO CONTACTO
+    <main id="container" class="container">
+        <h1>Contactanos!</h1>
+        <form id="contactForm">
+            <div class="verification">
+                <label for="name">Nombre</label>
+                <input id="name" type="name" placeholder="Ingresá tu nombre">
+                <p>Error message</p>
+            </div>
+            <div class="verification">
+                <label for="email">Correo electrónico</label>
+                <input id="email" type="email" placeholder="Ingresá tu correo electrónico">
+                <p>Error message</p>
+            </div>
+            <div class="verification">
+                <textarea cols="40" rows="8" id="comments" placeholder="Dejanos tu mensaje.." name="comments"></textarea>
+                <p>Error message</p>
+            </div>
+            <button type="submit" id="sendMessage">Enviar</button>
+            <button tipe="submit" id="resetMessage">Reiniciar</button>
+        </form>
+    </main>
 </body>
 </html>
