@@ -3,14 +3,13 @@ window.onload = function(){
     var name = document.getElementById('name');
     var email = document.getElementById('email');
     var message = document.getElementById('comments');
-    var sendBtn = document.getElementById('sendMessage');
     var resetBtn = document.getElementById('resetMessage');
     var emailFormat = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/;
 
     name.addEventListener('blur', function() {
         checkName();
     });
-    name.addEventListener('blur', function() {
+    name.addEventListener('focus', function() {
         reset(name);
     });
 
@@ -114,4 +113,14 @@ window.onload = function(){
         var container = input.parentElement;
         container.className = 'verification';
     };
+
+    resetBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        reset(name);
+        name.value='';
+        reset(email);
+        email.value='';
+        reset(message);
+        message.value='';
+    });
 };
