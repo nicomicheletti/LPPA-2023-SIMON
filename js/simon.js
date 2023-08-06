@@ -65,6 +65,13 @@ var playerPlay = function(){
     }
 }
 
+var playerGo = function() {
+    redBtn.disabled = false;
+    yellowBtn.disabled = false;
+    blueBtn.disabled = false;
+    greenBtn.disabled = false;
+}
+
 
 var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
