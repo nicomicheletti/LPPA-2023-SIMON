@@ -85,7 +85,7 @@ var validateSelection = function() {
         initialValidation++;
         score = score + 5;
         scoreSpan.innerHTML = score;
-        playerGo();
+        playerPlay();
     } else {
         gameOver();
     }
@@ -185,3 +185,8 @@ var handleGreenBtn = function() {
     sequencePlayer.push('green');
     validateSelection();
 };
+
+var handleRestartBtn = function() {
+    gameOverModal.classList.remove('showModal');
+    startSimon();
+}
