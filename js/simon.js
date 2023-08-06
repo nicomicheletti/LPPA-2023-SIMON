@@ -2,28 +2,48 @@
 
 var sequence = [];
 var colors = ['red', 'yellow', 'blue', 'green'];
+var sequencePlayer = [];
 var playerName = '';
+var level = 0;
+var indexValidate = 0;
+var score = 0;
+var totalScore = 0;
 
-var highlightColor = function(color){
-    switch(color) {
-        case 'red':
-            redBtn.classList.toggle('highlight');
-            setTimeout(function(){ redBtn.classList.toggle('highlight'); }, 1000);
-            break;
-        case 'yellow':
-            yellowBtn.classList.toggle('highlight');
-            setTimeout(function(){ yellowBtn.classList.toggle('highlight'); }, 1000);
-            break;
-        case 'blue':
-            blueBtn.classList.toggle('highlight');
-            setTimeout(function(){ blueBtn.classList.toggle('highlight'); }, 1000);
-            break;
-        case 'green':
-            greenBtn.classList.toggle('highlight');
-            setTimeout(function(){ greenBtn.classList.toggle('highlight'); }, 1000);
-            break;
-    }
-};
+var startSimon = function(){
+    startBtn.disabled = true;
+    rankingBtn.disabled = true;
+    var colorPos = Math.floor(Math.random()*4);
+    var newColor = colors[colorPos];
+    sequence.push(newColor);
+    setTimeout(showSequence, 2000);
+}
+
+var showSequence = function() {
+    sequence.forEach(function(color,i){
+        setTimeout(function(){
+            switch(color) {
+                case 'red':
+                    redBtn.classList.toggle('highlight');
+                    setTimeout(function(){ redBtn.classList.toggle('highlight'); }, 1000);
+                    break;
+                case 'yellow':
+                    yellowBtn.classList.toggle('highlight');
+                    setTimeout(function(){ yellowBtn.classList.toggle('highlight'); }, 1000);
+                    break;
+                case 'blue':
+                    blueBtn.classList.toggle('highlight');
+                    setTimeout(function(){ blueBtn.classList.toggle('highlight'); }, 1000);
+                    break;
+                case 'green':
+                    greenBtn.classList.toggle('highlight');
+                    setTimeout(function(){ greenBtn.classList.toggle('highlight'); }, 1000);
+                    break;
+            }
+        }, i*2000)
+});
+    setTimeout(playerPlay,sequence.length*1750);
+}
+
 
 var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
@@ -35,7 +55,6 @@ var handleRankingBtn = function() {
 };
 
 var handlePlayBtn = function() {
-    console.log('newells')
     playerName = playerNameForm.value;
     playerNameForm.value = '';
     newGameModal.classList.remove('showModal');
