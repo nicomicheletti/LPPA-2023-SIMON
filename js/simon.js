@@ -80,6 +80,47 @@ var increaseLevel = function() {
     sequencePlayer = [];
 }
 
+var validateSelection = function() {
+    if(sequence[initialValidation] == sequencePlayer[initialValidation]){
+        initialValidation++;
+        score = score + 5;
+        scoreSpan.innerHTML = score;
+        playerGo();
+    } else {
+        gameOver();
+    }
+}
+
+var simonPlay = function() {
+    redBtn.disabled = true;
+    yellowBtn.disabled = true;
+    blueBtn.disabled = true;
+    greenBtn.disabled = true;
+}
+
+var gameOver = function() {
+    simonPlay();
+    totalScore = score;
+    if (totalScore < 0){
+        totalScore = 0;
+    }
+    restartSimon();
+    gameOverModal.classList.add('showModal');
+}
+
+var restartSimon = function(){
+    sequence = [];
+    sequencePlayer = [];
+    level = 0;
+    score = 0;
+    redBtn.classList.remove('highlight');
+    yellowBtn.classList.remove('highlight');
+    blueBtn.classList.remove('highlight');
+    greenBtn.classList.remove('highlight');
+    levelSpan.innerHTML = level;
+    scoreSpan.innerHTML = score;
+}
+
 var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
     console.log("click btn");

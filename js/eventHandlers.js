@@ -15,6 +15,9 @@ var playBtn;
 var scoreSpan;
 var levelSpan;
 
+var gameOverModal;
+var restartBtn;
+
 var init = function() {
     startBtn = document.getElementById('startBtn');
     rankingBtn = document.getElementById('rankingBtn');
@@ -31,6 +34,9 @@ var init = function() {
     scoreSpan = document.getElementById('score');
     levelSpan = document.getElementById('level');
 
+    gameOverModal = document.getElementById('gameOver');
+    restartBtn = document.getElementById('restartBtn');
+
     startBtn.addEventListener('click', handleStartBtn);
     rankingBtn.addEventListener('click', handleRankingBtn);
 
@@ -41,6 +47,8 @@ var init = function() {
 
     playerNameForm.addEventListener('keyup', validateName);
     playBtn.addEventListener('click', handlePlayBtn);
+
+    restartBtn.addEventListener('click', handleRestartBtn);
 
     initButtons();
 };
