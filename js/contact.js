@@ -91,4 +91,27 @@ window.onload = function(){
             return '';
         };
     };
+
+    function checkMessage(){
+        if(checkInput(message)){
+            return 'Campo de mensaje incompleto';
+        } else if (message.value.length < 5){
+            showError(message,'Debe contener al menos 5 caracteres');
+            return 'El mensaje es muy breve';
+        } else {
+            return '';
+        };
+    };
+
+    function showError (input,textError) {
+        var container = input.parentElement;
+        var text = container.querySelector('p');
+        text.textContent = textError;
+        container.className = 'verification done';
+    };
+
+    function reset (input) {
+        var container = input.parentElement;
+        container.className = 'verification';
+    };
 };

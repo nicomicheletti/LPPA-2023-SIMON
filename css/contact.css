@@ -54,7 +54,11 @@ button {
     font-weight: 500;
     font-size: 12px;
     color: rgb(234, 10, 10);
-    /*visibility: hidden;*/
+    visibility: hidden;
+}
+
+.verification.done p {
+    visibility: visible;
 }
 
 #name {
