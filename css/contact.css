@@ -15,6 +15,7 @@ body {
     align-items: center;
     justify-content: center;
     height: auto;
+    padding: 5%;
     border: 2px solid rgb(0, 140, 255);
     border-radius: 20px;
 }
@@ -24,4 +25,48 @@ h1 {
     margin-top: 20px;
     text-align: center;
     font-size: 30px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+button {
+    margin-top: 2%;
+    padding: 15px;
+    background-color: rgb(0, 140, 255);
+    font-size: 16px;
+    color: rgb(231, 236, 241);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contactForm {
+    padding: 5%;
+}
+
+.verification p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: justify;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(234, 10, 10);
+    /*visibility: hidden;*/
+}
+
+#name {
+    display: flex;
+    font-size: small;
+}
+
+#email {
+    display: flex;
+    font-size: small;
+}
+
+input {
+    margin-top: 5px;
 }
