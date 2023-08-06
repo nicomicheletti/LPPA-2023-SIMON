@@ -13,6 +13,7 @@ var playerNameForm;
 var playBtn;
 
 var scoreSpan;
+var levelSpan;
 
 var init = function() {
     startBtn = document.getElementById('startBtn');
@@ -28,6 +29,7 @@ var init = function() {
     playBtn = document.getElementById('playBtn');
 
     scoreSpan = document.getElementById('score');
+    levelSpan = document.getElementById('level');
 
     startBtn.addEventListener('click', handleStartBtn);
     rankingBtn.addEventListener('click', handleRankingBtn);

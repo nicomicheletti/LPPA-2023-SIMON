@@ -5,7 +5,7 @@ var colors = ['red', 'yellow', 'blue', 'green'];
 var sequencePlayer = [];
 var playerName = '';
 var level = 0;
-var indexValidate = 0;
+var initialValidation = 0;
 var score = 0;
 var totalScore = 0;
 
@@ -27,6 +27,7 @@ var startSimon = function(){
 }
 
 var showSequence = function() {
+    increaseLevel();
     sequence.forEach(function(color,i){
         setTimeout(function(){
             switch(color) {
@@ -72,6 +73,12 @@ var playerGo = function() {
     greenBtn.disabled = false;
 }
 
+var increaseLevel = function() {
+    level++;
+    levelSpan.innerHTML = level;
+    initialValidation = 0;
+    sequencePlayer = [];
+}
 
 var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
