@@ -123,11 +123,10 @@ var restartSimon = function(){
 
 var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
-    console.log("click btn");
 };
 
 var handleRankingBtn = function() {
-    console.log("ranking btn")
+    rankingModal.classList.add('showModal');
 };
 
 var handlePlayBtn = function() {

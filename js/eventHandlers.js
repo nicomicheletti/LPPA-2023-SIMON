@@ -18,6 +18,9 @@ var levelSpan;
 var gameOverModal;
 var restartBtn;
 
+var rankingModal;
+var rankingTable;
+
 var init = function() {
     startBtn = document.getElementById('startBtn');
     rankingBtn = document.getElementById('rankingBtn');
@@ -36,6 +39,9 @@ var init = function() {
 
     gameOverModal = document.getElementById('gameOver');
     restartBtn = document.getElementById('restartBtn');
+
+    rankingModal = document.getElementById('ranking');
+    rankingTable = document.getElementById('rankingResults');
 
     startBtn.addEventListener('click', handleStartBtn);
     rankingBtn.addEventListener('click', handleRankingBtn);
