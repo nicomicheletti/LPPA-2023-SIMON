@@ -23,7 +23,7 @@ var startSimon = function(){
     var colorPos = Math.floor(Math.random()*4);
     var newColor = colors[colorPos];
     sequence.push(newColor);
-    setTimeout(showSequence, 2000);
+    setTimeout(showSequence, 1000);
 };
 
 var showSequence = function() {
@@ -33,24 +33,24 @@ var showSequence = function() {
             switch(color) {
                 case 'red':
                     redBtn.classList.toggle('highlight');
-                    setTimeout(function(){ redBtn.classList.toggle('highlight'); }, 1000);
+                    setTimeout(function(){ redBtn.classList.toggle('highlight'); }, 700);
                     break;
                 case 'yellow':
                     yellowBtn.classList.toggle('highlight');
-                    setTimeout(function(){ yellowBtn.classList.toggle('highlight'); }, 1000);
+                    setTimeout(function(){ yellowBtn.classList.toggle('highlight'); }, 700);
                     break;
                 case 'blue':
                     blueBtn.classList.toggle('highlight');
-                    setTimeout(function(){ blueBtn.classList.toggle('highlight'); }, 1000);
+                    setTimeout(function(){ blueBtn.classList.toggle('highlight'); }, 700);
                     break;
                 case 'green':
                     greenBtn.classList.toggle('highlight');
-                    setTimeout(function(){ greenBtn.classList.toggle('highlight'); }, 1000);
+                    setTimeout(function(){ greenBtn.classList.toggle('highlight'); }, 700);
                     break;
             }
-        }, i*2000)
+        }, i*1000)
 });
-    setTimeout(playerPlay,sequence.length*1750);
+    setTimeout(playerPlay,sequence.length*1000);
 };
 
 var playerPlay = function(){
