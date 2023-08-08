@@ -8,6 +8,9 @@ var level = 0;
 var initialValidation = 0;
 var score = 0;
 var totalScore = 0;
+var players = [];
+var playersJSON;
+var orderBy = 'score';
 
 var initButtons = function(){
     playBtn.disabled = true;
@@ -23,6 +26,7 @@ var startSimon = function(){
     var colorPos = Math.floor(Math.random()*4);
     var newColor = colors[colorPos];
     sequence.push(newColor);
+    getResults();
     setTimeout(showSequence, 1000);
 };
 
@@ -104,8 +108,44 @@ var gameOver = function() {
     if (totalScore < 0){
         totalScore = 0;
     }
+    saveResult(playerName, totalScore, level);
     restartSimon();
     gameOverModal.classList.add('showModal');
+};
+
+var saveResult = function(playerName, totalScore, level) {
+    var currentDate = new Date();
+    var hours = currentDate.getHours();
+    var minutes = currentDate.getMinutes();
+    var day = currentDate.toLocaleDateString();
+    if (hours < 10){
+        hours = '0' + hours;
+    }
+    if (minutes < 10){
+        minutes = '0' + minutes;
+    }
+    var playerResult = {
+        name: playerName,
+        score: totalScore,
+        level: level,
+        date: day,
+        hour: hours + ':' + minutes
+    };
+    players.push(playerResult);
+    playersJSON = JSON.stringify(players);
+    localStorage.setItem('playersData', playersJSON);
+};
+
+var getResults = function(orderBy) {
+    if (localStorage.getItem('playersData') !=null){
+        playersJSON = localStorage.getItem('playersData');
+        players = JSON.parse(playersJSON);
+    }
+    if (orderBy == 'score'){
+        players.sort(function(a, b){
+            return b.score - a.score;
+        });
+    };
 };
 
 var restartSimon = function(){
