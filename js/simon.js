@@ -137,12 +137,12 @@ var saveResult = function(playerName, totalScore, level) {
 };
 
 var getResults = function(orderBy) {
-    if (localStorage.getItem('playersData') !=null){
+    if (localStorage.getItem('playersData') != null){
         playersJSON = localStorage.getItem('playersData');
         players = JSON.parse(playersJSON);
     }
     if (orderBy == 'score'){
-        players.sort(function(a, b){
+        players.sort(function(a, b) {
             return b.score - a.score;
         });
     };
@@ -186,10 +186,10 @@ var handleStartBtn = function() {
 };
 
 var handleRankingBtn = function(orderBy) {
-    rankingModal.classList.add('showModal');
     rankingTable.innerHTML = '';
     getResults(orderBy);
     players.forEach(addResult);
+    rankingModal.classList.add('showModal');
 };
 
 var handlePlayBtn = function() {
