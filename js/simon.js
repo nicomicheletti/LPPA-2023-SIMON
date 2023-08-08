@@ -148,6 +148,26 @@ var getResults = function(orderBy) {
     };
 };
 
+var addResult = function(player) {
+    var row = document.createElement('tr');
+    var nameResult = document.createElement('td');
+    var scoreResult = document.createElement('td');
+    var levelResult = document.createElement('td');
+    var dateResult = document.createElement('td');
+    var hourResult = document.createElement('td');
+    nameResult.textContent = player.name;
+    scoreResult.textContent = player.score;
+    levelResult.textContent = player.level;
+    dateResult.textContent = player.date;
+    hourResult.textContent = player.hour;
+    row.appendChild(nameResult);
+    row.appendChild(scoreResult);
+    row.appendChild(levelResult);
+    row.appendChild(dateResult);
+    row.appendChild(hourResult);
+    rankingTable.appendChild(row);
+};
+
 var restartSimon = function(){
     sequence = [];
     sequencePlayer = [];
@@ -165,8 +185,11 @@ var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
 };
 
-var handleRankingBtn = function() {
+var handleRankingBtn = function(orderBy) {
     rankingModal.classList.add('showModal');
+    rankingTable.innerHTML = '';
+    getResults(orderBy);
+    players.forEach(addResult);
 };
 
 var handlePlayBtn = function() {
