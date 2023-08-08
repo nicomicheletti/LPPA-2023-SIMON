@@ -136,7 +136,7 @@ var saveResult = function(playerName, totalScore, level) {
     localStorage.setItem('playersData', playersJSON);
 };
 
-var getResults = function(orderBy) {
+var getResults = function() {
     if (localStorage.getItem('playersData') != null){
         playersJSON = localStorage.getItem('playersData');
         players = JSON.parse(playersJSON);
@@ -185,9 +185,9 @@ var handleStartBtn = function() {
     newGameModal.classList.add('showModal');
 };
 
-var handleRankingBtn = function(orderBy) {
+var handleRankingBtn = function() {
     rankingTable.innerHTML = '';
-    getResults(orderBy);
+    getResults();
     players.forEach(addResult);
     rankingModal.classList.add('showModal');
 };
