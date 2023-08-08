@@ -37,8 +37,21 @@
     display: block;
 }
 
-#resultsHeader {
-    justify-content: space-between;
+table {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-collapse: separate;
+}
+
+th {
+    padding-bottom: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+
+td {
+    font-size: 15px;
+    padding-right: 10px;
 }
 
 .showModal {
