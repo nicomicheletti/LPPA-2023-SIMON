@@ -21,6 +21,9 @@ var restartBtn;
 var rankingModal;
 var rankingTable;
 
+var orderByScoreBtn;
+var orderByDateBtn;
+
 var init = function() {
     startBtn = document.getElementById('startBtn');
     rankingBtn = document.getElementById('rankingBtn');
@@ -43,6 +46,9 @@ var init = function() {
     rankingModal = document.getElementById('ranking');
     rankingTable = document.getElementById('rankingResults');
 
+    orderByScoreBtn = document.getElementById('orderByScoreBtn');
+    orderByDateBtn = document.getElementById('orderByDateBtn');
+
     startBtn.addEventListener('click', handleStartBtn);
     rankingBtn.addEventListener('click', handleRankingBtn);
 
@@ -55,6 +61,9 @@ var init = function() {
     playBtn.addEventListener('click', handlePlayBtn);
 
     restartBtn.addEventListener('click', handleRestartBtn);
+
+    orderByScoreBtn.addEventListener('click', orderByScore);
+    orderByDateBtn.addEventListener('click', orderByDate);
 
     initButtons();
 };

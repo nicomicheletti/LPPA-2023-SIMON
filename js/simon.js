@@ -11,6 +11,7 @@ var totalScore = 0;
 var players = [];
 var playersJSON;
 var orderBy = 'score';
+var sortOrder = 'desc';
 var timer = 0;
 var penalizationInterval;
 var elapsedTime = 0;
@@ -136,21 +137,16 @@ var gameOver = function() {
 
 var saveResult = function(playerName, totalScore, level) {
     var currentDate = new Date();
-    var hours = currentDate.getHours();
-    var minutes = currentDate.getMinutes();
-    var day = currentDate.toLocaleDateString();
-    if (hours < 10){
-        hours = '0' + hours;
-    }
-    if (minutes < 10){
-        minutes = '0' + minutes;
-    }
+    var dateString = currentDate.toLocaleDateString();
+    var timeString = currentDate.toLocaleTimeString();
+
     var playerResult = {
         name: playerName,
         score: totalScore,
         level: level,
-        date: day,
-        hour: hours + ':' + minutes
+        date: dateString,
+        time: timeString,
+        timestamp: currentDate.getTime()
     };
     players.push(playerResult);
     playersJSON = JSON.stringify(players);
@@ -162,11 +158,15 @@ var getResults = function() {
         playersJSON = localStorage.getItem('playersData');
         players = JSON.parse(playersJSON);
     }
-    if (orderBy == 'score'){
+    if (orderBy === 'score') {
         players.sort(function(a, b) {
-            return b.score - a.score;
+            return sortOrder === 'asc' ? a.score - b.score : b.score - a.score;
         });
-    };
+    } else if (orderBy === 'date') {
+        players.sort(function(a, b) {
+            return sortOrder === 'asc' ? a.timestamp - b.timestamp : b.timestamp - a.timestamp;
+        });
+    }
 };
 
 var addResult = function(player) {
@@ -274,3 +274,22 @@ var handleRestartBtn = function() {
     gameOverModal.classList.remove('showModal');
     startSimon();
 };
+
+var orderByScore = function() {
+    orderBy = 'score';
+    sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+    updateRanking();
+};
+
+var orderByDate = function() {
+    orderBy = 'date';
+    sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+    updateRanking();
+};
+
+var updateRanking = function() {
+    rankingTable.innerHTML = '';
+    getResults();
+    players.forEach(addResult);
+};
+
