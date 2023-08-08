@@ -136,15 +136,15 @@ var gameOver = function() {
 
 var saveResult = function(playerName, totalScore, level) {
     var currentDate = new Date();
-    var dateString = currentDate.toLocaleDateString();
-    var timeString = currentDate.toLocaleTimeString();
+    var hours = currentDate.getHours();
+    var minutes = currentDate.getMinutes();
+    var day = currentDate.toLocaleDateString();
     var playerResult = {
         name: playerName,
         score: totalScore,
         level: level,
-        date: dateString,
-        time: timeString,
-        timestamp: currentDate.getTime()
+        date: day,
+        hour: hours + ':' + minutes
     };
     players.push(playerResult);
     playersJSON = JSON.stringify(players);
@@ -160,9 +160,18 @@ var getResults = function() {
         players.sort(function(a, b) {
             return sortOrder === 'asc' ? a.score - b.score : b.score - a.score;
         });
-    } else if (orderBy === 'date') {
+    }
+    if (orderBy === 'date') {
         players.sort(function(a, b) {
-            return sortOrder === 'asc' ? a.timestamp - b.timestamp : b.timestamp - a.timestamp;
+            var dateA = a.date + ' ' + a.hour;
+            var dateB = b.date + ' ' + b.hour;
+            if (dateA > dateB){
+                return sortOrder === 'asc' ? -1 : 1;
+            } else if (dateA < dateB) {
+                return sortOrder === 'asc' ? 1 : -1;
+            } else {
+                return 0;
+            }
         });
     }
 };
