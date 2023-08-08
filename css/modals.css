@@ -37,6 +37,10 @@
     display: block;
 }
 
+.showModal {
+    display: flex;
+}
+
 table {
     padding-left: 10px;
     padding-right: 10px;
@@ -54,6 +58,3 @@ td {
     padding-right: 10px;
 }
 
-.showModal {
-    display: flex;
-}
