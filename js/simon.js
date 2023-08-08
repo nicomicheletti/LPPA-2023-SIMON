@@ -79,7 +79,7 @@ var startSimon = function(){
     sequence.push(newColor);
     getResults();
     setTimeout(showSequence, 1000);
-    timer = setInterval(updateTime, 1500);
+    timer = setInterval(updateTime, 1000);
     penalizationInterval = setInterval(penalize, 20000);
 };
 
@@ -129,8 +129,8 @@ var gameOver = function() {
     }
     saveResult(playerName, totalScore, level);
     restartSimon();
-    clearInterval(penalizationInterval);
     clearInterval(timer);
+    clearInterval(penalizationInterval);
     gameOverModal.classList.add('showModal');
 };
 
