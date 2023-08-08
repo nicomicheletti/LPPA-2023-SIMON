@@ -1,3 +1,4 @@
+'use strict'
 window.onload = function(){
 
     var name = document.getElementById('name');
@@ -26,6 +27,13 @@ window.onload = function(){
     message.addEventListener('focus', function() {
         reset(message);
     });
+
+    function showError (input,textError) {
+        var container = input.parentElement;
+        var text = container.querySelector('p');
+        text.textContent = textError;
+        container.className = 'verification done';
+    };
 
     function checkInput (input) {
         if (input.value === '') {
@@ -85,13 +93,6 @@ window.onload = function(){
         } else {
             return '';
         };
-    };
-
-    function showError (input,textError) {
-        var container = input.parentElement;
-        var text = container.querySelector('p');
-        text.textContent = textError;
-        container.className = 'verification done';
     };
 
     function reset (input) {

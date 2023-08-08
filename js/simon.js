@@ -24,22 +24,11 @@ var initButtons = function(){
     greenBtn.disabled = true;
 };
 
-var startSimon = function(){
-    startBtn.disabled = true;
-    rankingBtn.disabled = true;
-    var colorPos = Math.floor(Math.random()*4);
-    var newColor = colors[colorPos];
-    sequence.push(newColor);
-    getResults();
-    setTimeout(showSequence, 1000);
-
-    timer = setInterval(updateTime, 1500);
-    penalizationInterval = setInterval(penalize, 20000);
-};
-
-var updateTime = function() {
-    elapsedTime++;
-    document.getElementById('time').innerHTML = elapsedTime;
+var increaseLevel = function() {
+    level++;
+    levelSpan.innerHTML = level;
+    initialValidation = 0;
+    sequencePlayer = [];
 };
 
 var showSequence = function() {
@@ -69,6 +58,31 @@ var showSequence = function() {
     setTimeout(playerPlay,sequence.length*1000);
 };
 
+var updateTime = function() {
+    elapsedTime++;
+    document.getElementById('time').innerHTML = elapsedTime;
+};
+
+var penalize = function() {
+    score -= 5;
+    if (score < 0) {
+        score = 0;
+    }
+    scoreSpan.innerHTML = score;
+};
+
+var startSimon = function(){
+    startBtn.disabled = true;
+    rankingBtn.disabled = true;
+    var colorPos = Math.floor(Math.random()*4);
+    var newColor = colors[colorPos];
+    sequence.push(newColor);
+    getResults();
+    setTimeout(showSequence, 1000);
+    timer = setInterval(updateTime, 1500);
+    penalizationInterval = setInterval(penalize, 20000);
+};
+
 var playerPlay = function(){
     if(sequence.length > sequencePlayer.length){
         playerGo();
@@ -89,13 +103,6 @@ var playerGo = function() {
     greenBtn.disabled = false;
 };
 
-var increaseLevel = function() {
-    level++;
-    levelSpan.innerHTML = level;
-    initialValidation = 0;
-    sequencePlayer = [];
-};
-
 var validateSelection = function() {
     if(sequence[initialValidation] == sequencePlayer[initialValidation]){
         initialValidation++;
@@ -105,14 +112,6 @@ var validateSelection = function() {
     } else {
         gameOver();
     }
-};
-
-var penalize = function() {
-    score -= 5;
-    if (score < 0) {
-        score = 0;
-    }
-    scoreSpan.innerHTML = score;
 };
 
 var simonPlay = function() {
@@ -139,7 +138,6 @@ var saveResult = function(playerName, totalScore, level) {
     var currentDate = new Date();
     var dateString = currentDate.toLocaleDateString();
     var timeString = currentDate.toLocaleTimeString();
-
     var playerResult = {
         name: playerName,
         score: totalScore,
@@ -275,6 +273,12 @@ var handleRestartBtn = function() {
     startSimon();
 };
 
+var updateRanking = function() {
+    rankingTable.innerHTML = '';
+    getResults();
+    players.forEach(addResult);
+};
+
 var orderByScore = function() {
     orderBy = 'score';
     sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
@@ -286,10 +290,3 @@ var orderByDate = function() {
     sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
     updateRanking();
 };
-
-var updateRanking = function() {
-    rankingTable.innerHTML = '';
-    getResults();
-    players.forEach(addResult);
-};
-
