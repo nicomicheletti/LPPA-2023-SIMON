@@ -11,6 +11,9 @@ var totalScore = 0;
 var players = [];
 var playersJSON;
 var orderBy = 'score';
+var timer = 0;
+var penalizationInterval;
+var elapsedTime = 0;
 
 var initButtons = function(){
     playBtn.disabled = true;
@@ -28,6 +31,14 @@ var startSimon = function(){
     sequence.push(newColor);
     getResults();
     setTimeout(showSequence, 1000);
+
+    timer = setInterval(updateTime, 1500);
+    penalizationInterval = setInterval(penalize, 20000);
+};
+
+var updateTime = function() {
+    elapsedTime++;
+    document.getElementById('time').innerHTML = elapsedTime;
 };
 
 var showSequence = function() {
@@ -95,6 +106,14 @@ var validateSelection = function() {
     }
 };
 
+var penalize = function() {
+    score -= 5;
+    if (score < 0) {
+        score = 0;
+    }
+    scoreSpan.innerHTML = score;
+};
+
 var simonPlay = function() {
     redBtn.disabled = true;
     yellowBtn.disabled = true;
@@ -110,6 +129,8 @@ var gameOver = function() {
     }
     saveResult(playerName, totalScore, level);
     restartSimon();
+    clearInterval(penalizationInterval);
+    clearInterval(timer);
     gameOverModal.classList.add('showModal');
 };
 
@@ -196,6 +217,7 @@ var handlePlayBtn = function() {
     playerName = playerNameForm.value;
     playerNameForm.value = '';
     newGameModal.classList.remove('showModal');
+    clearInterval(penalizationInterval);
     startSimon();
 };
 
