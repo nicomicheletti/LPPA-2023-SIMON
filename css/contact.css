@@ -5,8 +5,8 @@ body {
     justify-content: center;
     height: 100vh;
     background-color: rgb(231, 236, 241);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:rgb(0, 140, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #container {
@@ -38,9 +38,9 @@ button {
     margin-top: 2%;
     padding: 15px;
     background-color: rgb(0, 140, 255);
-    font-size: 16px;
     color: rgb(231, 236, 241);
     border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -52,9 +52,9 @@ button {
     margin-top: 0;
     margin-bottom: 10px;
     text-align: justify;
+    color: rgb(234, 10, 10);
     font-weight: 500;
     font-size: 12px;
-    color: rgb(234, 10, 10);
     visibility: hidden;
 }
 
